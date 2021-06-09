@@ -63,7 +63,7 @@ function SignOut() { //if we have a currentUSer return a button
 }
 
 function ChatRoom() {
-
+  //connecting the ref of the div 
   const dummy = useRef();
 
 
@@ -88,12 +88,12 @@ function ChatRoom() {
 
     dummy.current.scrollIntoView({ behavior: 'smooth' }); //automatic scroll when sending msg
   }
-
+//div ref dummy for the auto scroll down
   return (
     <>
       <div>
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
-        <div ref={dummy}></div>
+        <div ref={dummy}></div> 
       </div>
 
       <form onSubmit={sendMessage} >
